@@ -1,0 +1,66 @@
+button, input[type=submit], input[type=button], input[type=reset], a.button, span.button a{
+	font-size: 16px;
+	margin: 0;
+	padding: 14px 24px;
+	background-color: $white;
+	border: 1px solid $border-color;
+	color: $blue;
+	font-weight: 700;
+	cursor:pointer;
+	line-height: 1.25;
+	@include border_radius($border-radius-button);
+	@include transition();
+	text-decoration: none;
+	&:hover, &.hover{
+		color: $gray-1;
+		border-color: $border-color-hover;
+	}
+	&:focus {
+		color: #fff;
+		background-color: $blue-4;
+		border-color: $border-color-focus;
+	}
+	&.disabled,&[disabled] {
+		color: $blue;
+		opacity: 0.4;
+		cursor: not-allowed;
+		&:hover {
+			border-color: $border-color;
+		}
+	}
+	&.border-primary {
+		border-color: $blue;
+		&:hover, &.hover {
+			border-color: $border-color-focus;
+		}
+		&.disabled,&[disabled] {
+			color: $blue;
+			opacity: 0.4;
+			cursor: not-allowed;
+			&:hover {
+				border-color: $border-color-focus;
+			}
+		}
+	}
+	&.fill {
+		background-color: $blue;
+		color: $white;
+		border-color: $blue;
+		&:hover, &.hover {
+			background-color: $border-color-hover;
+		}
+		&:focus {
+			background-color: $white;
+			color: $primary;
+			border-color: $white;
+		}
+		&.disabled,&[disabled] {
+			color: #fff;
+			background-color: $blue;
+			border-color: $blue;
+		}
+	}
+	&.no-border {
+		border: 0;
+	}
+}

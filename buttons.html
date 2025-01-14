@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/src/styles/styles.scss">
+		<title>Sapiens - buttons</title>
+	</head>
+	<body>
+		<!--Header-->
+		<header class="header">
+			<div class="container-fluid global-container-wide">
+				<!--Header desktop-->
+				<div class="header__wrapper">
+					<h1 class="header__logo">
+						<a href="/" aria-label="Grįžti į titulinį">
+							<i class='icon icon-site-logo'></i>
+						</a>
+					</h1>
+					<nav class="header__nav" aria-label="Pagrindinė navigacija">
+						<ul class="menu-list">
+							<li class="active">
+								<a href="buttons">Buttons</a>
+							</li>
+							<li class="has-childs">
+								<a href="#">Maisot papildai</a>
+								<div class="megamenu">
+									<ul class="menu-list">
+										<li>
+											<a href="#">Dropdown 1</a>
+										</li>
+										<li>
+											<a href="#">Dropdown 2 ilgas tekstas</a>
+										</li>
+										<li>
+											<a href="#">Dropdown 3 ilgas tekstas ilgas tekstas ilgas tekstas</a>
+										</li>
+									</ul>
+
+								</div>
+							</li>
+							<li>
+								<a href="#">Sapiens PRO linija</a>
+							</li>
+
+						</ul>
+					</nav>
+					<div class="header__search">
+						<form method="get" action="/paieska/ieskoti">
+							<input data-link="/paieska/greita" id="mobile-quickSearch" value="" class="" type="text" name="search_data" placeholder="ieškoti vitaminų">
+							<button type="submit">
+								<i class='icon icon-search'></i>
+							</button>
+						</form>
+					</div>
+					<div class="header__icons">
+						<div class="search">
+							<a href="#"><i class='icon icon-search'></i></a>
+						</div>
+						<div class="cart">
+							<a href="#"><i class='icon icon-cart'></i></a>
+						</div>
+						<div class="toggle">
+							<a href="#"><i class='icon icon-burger'></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<!--Main-->
+		<main>
+			<div class="index-container">
+				<div class="global-container container-fluid" style="background-color: #F5F5F7">
+					<div class="p-4">
+
+						<h1>Buttons</h1>
+						<h2>Button</h2>
+						<button>Button</button>
+						<button disabled>Button</button>
+
+						<h2>Button.no-border</h2>
+						<button class="no-border">Button</button>
+						<button class="no-border" disabled>Button</button>
+
+						<h2>Button.border-primary</h2>
+						<button class="border-primary">Button</button>
+						<button class="border-primary" disabled>Button</button>
+
+						<h2>Button.fill</h2>
+						<button class="fill">Button</button>
+						<button class="fill" disabled>Button</button>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!--Footer-->
+		<footer class="footer">
+			<div class="footer__top">
+				<div class="container-fluid global-container">
+					logo, menu, social
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<div class="container-fluid global-container">
+					security, menu, newsletter, copyright
+				</div>
+			</div>
+		</footer>
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+/* Remove default margin and padding */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set body font and line-height */
+body {
+  font-family: sans-serif; /* or any default font you prefer */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased; /* For better font rendering in Webkit-based browsers */
+  -moz-osx-font-smoothing: grayscale; /* For better font rendering on macOS */
+}
+
+/* Remove list bullets and padding */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove text decoration from links */
+a {
+  text-decoration: none;
+  color: inherit; /* Ensure links inherit text color */
+}
+
+/* Reset table borders */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove default form styles */
+input,
+textarea,
+select,
+button {
+  background: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+}
+
+/* Remove default styles for buttons */
+button {
+  cursor: pointer;
+}
+
+/* Remove default fieldset padding and border */
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+/* Reset image alignment */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reset form inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  border: 1px solid #ccc; /* Add border for better styling */
+}

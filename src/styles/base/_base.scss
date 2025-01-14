@@ -1,0 +1,193 @@
+html {
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+@-ms-viewport{
+	width: device-width;
+}
+
+body{
+	background: $bg-color;
+}
+
+body, p, td, div{
+	font-family: $font;
+	color: $text-color;
+	@include font-size($p-font-sizes);
+}
+p{
+	margin:15px 0;
+}
+a{
+	color:$link-color;
+	font-weight:600;
+	text-decoration:none;
+	&:hover, &:focus, &.hover {
+        text-decoration: underline;
+    }
+}
+strong{
+	font-weight: 700;
+}
+i{
+	font-style: italic;
+}
+
+//Headings
+// Classes as .h2 needed for span elements for W3C validation inside <a> elements
+
+h1, .h1 {
+	@include font-size($h1-font-sizes);
+	font-weight: 700;
+}
+h2, .h2 {
+	@include font-size($h2-font-sizes);
+	font-weight: 700;
+}
+h3, .h3 {
+	@include font-size($h3-font-sizes);
+	font-weight: 700;
+}
+h4, .h4 {
+	@include font-size($h4-font-sizes);
+	font-weight: 700;
+}
+h5, .h5 {
+	@include font-size($h5-font-sizes);
+	font-weight: 700;
+}
+h6, .h6 {
+	@include font-size($h6-font-sizes);
+	font-weight: 700;
+}
+
+h1, h2, h3, .h1, .h2, .h3{
+	margin:20px 0;
+	@include min(1024) {
+		margin:20px 0;
+	}
+}
+
+h4, h5, h6, .h4, .h5, .h6{
+	margin:15px 0;
+	@include min(1024) {
+		margin:10px 0;
+	}
+}
+
+//Lists
+ul, ol, li{
+	@include zero();
+}
+ul{
+	list-style-type:none;
+	overflow: hidden;
+}
+ul:not(.menu-list, .select2-results__options, .pagination){
+	margin: 0 0 20px 0;
+	li {
+		line-height: 26px;
+		position: relative;
+		padding-left: 17px;
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 7px;
+			display: inline-block;
+			margin-right: 6px;
+			width: 11px;
+			height: 11px;
+			background-color: $primary;
+			@include border-radius(50%);
+		}
+		&:not(:last-child) {
+			margin-bottom: 2px;
+		}
+		ul {
+			padding-left: 16px;
+			margin: 5px 0 0 0;
+			li {
+				&:before {
+					background-color: transparent;
+					border: 2px solid $primary;
+				}
+			}
+		}
+	}
+}
+
+ol {
+	color: $text-color;
+	list-style-type: none;
+	counter-reset: item;
+	padding: 0;
+	margin: 20px 0 20px 0;
+	@include min(1024){
+		margin: 32px 0 32px 0;
+	}
+	> li {
+		line-height: 26px;
+		font-weight: 400;
+		display: table;
+		counter-increment: item;
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+		ol {
+			margin: 5px 0 0 0;
+			li {
+				&:not(:last-child) {
+					margin-bottom: 5px;
+				}
+			}
+		}
+
+		&:before {
+			color: $primary;
+			font-weight: 600;
+			content: counters(item, ".") ".";
+			display: table-cell;
+			padding-right: 6px;
+			min-width: 25px;
+		}
+	}
+	p {
+		margin: 0;
+	}
+}
+
+// Forms, inputs
+form{
+	@include zero();
+}
+input[type=text], input[type=email], input[type=password], input[type=url], input[type=tel],  input[type=number],  input[type=search], input[type=date], input[type=month], input[type=week], input[type=datetime], input[type=datetime-local], textarea {
+	font-size: 14px;
+	color: $gray-2;
+	background-color: $white;
+	width: 100%;
+	height: $input-height;
+	margin: 0;
+	padding: 0 20px;
+	border: 1px solid $border-color;
+	-webkit-appearance: none;
+	@include border_radius($border_radius_input);
+	@include transition();
+	@include min(1024){
+		max-width: 100%;
+	}
+	&:focus{
+		border-color: $active-color;
+	}
+}
+
+input[readonly]:not(.datepicker){
+	cursor: not-allowed;
+}
+

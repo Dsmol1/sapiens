@@ -1,0 +1,32 @@
+//Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+//Abstracts
+@import 'abstracts/_variables.scss';
+@import 'abstracts/_mixins';
+@import 'abstracts/_icons';
+
+//Base
+@import 'base/_reset';
+@import 'base/_base';
+@import 'base/_typography';
+
+//Components
+@import 'components/_animations';
+@import 'components/_buttons';
+@import 'components/_forms_input';
+@import 'components/_breadcrumbs';
+@import 'components/_hero-slider';
+@import 'components/_products';
+
+//Layout
+@import 'layout/_layout';
+@import 'layout/_header';
+@import 'layout/_footer';
+@import 'layout/_main';
+
+
+//misc
+.section-title {
+	margin: 0;
+}

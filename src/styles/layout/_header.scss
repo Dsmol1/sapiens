@@ -1,0 +1,166 @@
+.header {
+	position: fixed;
+	width: 100%;
+	@include transition();
+	&--hidden {
+		transform: translateY(-96px);
+	}
+	&__logo {
+		margin: 0;
+		a {
+			@include flex-x-align;
+			@include transition();
+			font-size: 28px;
+			@include min(345){
+				font-size: 36px;
+			}
+			@include min(1024){
+				font-size: 48px;
+			}
+			&:hover,&:focus {
+				text-decoration: none;
+				color: $blue-4;
+			}
+		}
+	}
+	&__wrapper {
+		box-shadow: $box-shadow;
+		background-color: #fff;
+		border-bottom-left-radius: $border-radius-header;
+		border-bottom-right-radius: $border-radius-header;
+		padding: 16px;
+		@include flex-x-align;
+		gap: 16px;
+		@include min(1024){
+			padding: 24px;
+			gap: 48px;
+		}
+	}
+	&__nav {
+		display: none;
+		@include min(1024){
+			display: block;
+		}
+		flex-shrink: 0;
+		> ul {
+			@include flex-center;
+			gap: 24px;
+			> li {
+				flex-shrink: 0;
+				&.active {
+					> a {
+						color: $blue-4;
+					}
+				}
+				> a {
+					text-decoration: none;
+					display: block;
+					padding: 14px 0;
+					@include transition();
+
+				}
+				&.has-childs {
+					> a {
+						@include flex-center;
+						gap: 10px;
+						&:after {
+							@include transition();
+							font-size: 8px;
+							@include icomoon();
+							content:'\e903';
+						}
+					}
+					.megamenu {
+						position: absolute;
+						visibility: hidden;
+						opacity: 0;
+						background-color: #fff;
+						@include border-radius(4px);
+						box-shadow: $box-shadow;
+						padding: 16px 18px;
+						min-width: 200px;
+						max-width: 250px;
+						> ul {
+							> li {
+								&:not(:last-child) {
+									margin-bottom: 8px;
+								}
+								a {
+									font-size: 14px;
+								}
+							}
+						}
+					}
+					&:hover,&:focus {
+						.megamenu {
+							visibility: visible;
+							opacity: 1;
+						}
+						> a {
+							&:after {
+								color: $blue-4;
+								@include rotate(180deg);
+							}
+						}
+					}
+				}
+				&:hover,&:focus {
+					> a {
+						color: $blue-4;
+					}
+				}
+			}
+		}
+	}
+	&__search {
+		display: none;
+		@include min(1024){
+			display: block;
+		}
+		margin-left: auto;
+		max-width: 596px;
+		width: 100%;
+		form {
+			position: relative;
+			input {
+				padding-right: 48px;
+			}
+			button {
+				position: absolute;
+				right: 8px;
+				border: 0;
+				background-color: transparent;
+				.icon {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+	&__icons {
+		@include flex-center;
+		gap: 16px;
+		@include min(1024){
+			gap: 24px;
+		}
+		@include max(1023){
+			margin-left: auto;
+		}
+		.search {
+			@include min(1024){
+				display: none;
+			}
+		}
+		a {
+			display: block;
+			padding: 6px 4px;
+			@include transition();
+			.icon {
+				font-size: 20px;
+			}
+			&:hover,&:focus {
+				text-decoration: none;
+				color: $blue-4;
+			}
+		}
+	}
+}
