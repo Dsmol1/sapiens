@@ -1,12 +1,11 @@
-import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
-export default defineConfig({
-	build: {
-		rollupOptions: {
-			input: {
-				main: 'index.html', // Main page
-				buttons: 'buttons.html', // Buttons page
-			},
-		},
-	},
-});
+export default{
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+      }
+    }
+  }
+};
