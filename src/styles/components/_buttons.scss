@@ -11,7 +11,7 @@ button, input[type=submit], input[type=button], input[type=reset], a.button, spa
 	@include border_radius($border-radius-button);
 	@include transition();
 	text-decoration: none;
-	&:hover, &:focus, &.hover{
+	&:hover, &.hover{
 		color: $gray-1;
 		border-color: $border-color-hover;
 	}
@@ -24,20 +24,22 @@ button, input[type=submit], input[type=button], input[type=reset], a.button, spa
 		color: $blue;
 		opacity: 0.4;
 		cursor: not-allowed;
-		&:hover {
+		&:hover ,&:active {
+			background-color: $white;
 			border-color: $border-color;
 		}
 	}
 	&.border-primary {
 		border-color: $blue;
-		&:hover, &:focus, &.hover {
+		&:hover , &.hover {
 			border-color: $border-color-focus;
 		}
 		&.disabled,&[disabled] {
 			color: $blue;
 			opacity: 0.4;
 			cursor: not-allowed;
-			&:hover, &:focus, {
+			&:hover,&:focus,&:active {
+				background-color: $white;
 				border-color: $border-color-focus;
 			}
 		}
@@ -46,7 +48,7 @@ button, input[type=submit], input[type=button], input[type=reset], a.button, spa
 		background-color: $blue;
 		color: $white;
 		border-color: $blue;
-		&:hover, &:focus, &.hover {
+		&:hover, &.hover {
 			background-color: $border-color-hover;
 		}
 		&:active {
