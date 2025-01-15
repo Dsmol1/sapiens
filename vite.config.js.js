@@ -4,9 +4,8 @@ export default defineConfig({
 	build: {
 		rollupOptions: {
 			input: {
-				home: '/index.html',
-				buttons: '/buttons.html',
-// Add more pages here
+				main: 'index.html', // Main page
+				buttons: 'buttons.html', // Buttons page
 			},
 		},
 	},
